@@ -1,0 +1,59 @@
+library IEEE;  
+
+ 
+
+use IEEE.STD_LOGIC_1164.ALL; 
+
+use IEEE.STD_LOGIC_ARITH.ALL; 
+
+USE IEEE.STD_LOGIC_UNSIGNED.ALL;  
+
+  
+
+  
+
+entity control_logic is 
+
+Port( 
+
+Left , Right : in STD_LOGIC; 
+
+GClock, GReset : in STD_lOGIC; 
+
+DisplayOut   : out STD_LOGIC_VECTOR(7 downto 0) 
+
+ 
+
+); 
+
+end control_logic; 
+
+ 
+
+ARCHITECTURE rtl OF control_logic IS 
+
+SIGNAL int_Value, int_notValue : STD_LOGIC_VECTOR(7 downto 0); 
+
+ 
+
+COMPONENT enARdFF_2 
+
+PORT( 
+
+i_resetBar	: IN	STD_LOGIC; 
+
+i_d		: IN	STD_LOGIC; 
+
+i_enable	: IN	STD_LOGIC; 
+
+i_clock		: IN	STD_LOGIC; 
+
+o_q, o_qBar	: OUT	STD_LOGIC); 
+
+END COMPONENT; 
+
+ 
+
+BEGIN 
+
+ 
